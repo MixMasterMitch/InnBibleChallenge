@@ -2,3 +2,4 @@
 .idea
 *.iml
 
+server/node_modules/
