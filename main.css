@@ -1,0 +1,268 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background: #f2f2f2;
+    overflow-y: scroll;
+}
+
+#headingWrapper {
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #262626;
+    box-shadow: 0 2px 3px rgba(100, 100, 100, 0.25);
+    color: white;
+    z-index: 100;
+    overflow: hidden;
+}
+
+#theInnLogo {
+    float: left;
+}
+
+#heading h1 {
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: 300;
+    float: left;
+}
+
+#heading h2 {
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: 300;
+    float: right;
+}
+
+#heading h5 {
+    display: inline-block;
+    margin: 0px;
+    font-weight: 300;
+    float: right;
+    line-height: 100px;
+    cursor: pointer;
+}
+
+#heading #backButton {
+    margin-left: 20px;
+}
+
+#heading #backButton,
+#heading #nextButton {
+    float: right;
+    cursor: pointer;
+}
+
+.ng-hide {
+    display: block !important;
+    opacity: 0;
+    cursor: default !important;
+}
+
+div[ng-view] {
+    -webkit-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    -ms-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    transition: 1s linear all;
+
+    margin: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div[ng-view].ng-enter {
+    opacity: 0;
+}
+
+div[ng-view].ng-enter-active {
+    opacity: 1;
+}
+
+div[ng-view].ng-leave {
+    opacity: 0;
+}
+
+div[section] {
+    -webkit-transition: .2s ease all;
+    -moz-transition: .2s ease all;
+    -ms-transition: .2s ease all;
+    -o-transition: .2s ease all;
+    transition: .2s ease all;
+
+    background: white;
+    box-shadow: 0 0 3px rgba(100, 100, 100, 0.25);
+    margin: 20px 0;
+    padding: 12px;
+    border-bottom: 4px solid #262626;
+    color: #262626;
+}
+
+div[section]:hover {
+    box-shadow: 0 0 5px rgba(100, 100, 100, 0.5);
+    border-bottom: 4px solid #ea5449;
+}
+
+.versions {
+    float: right;
+}
+
+.version {
+    color: #ea5449;
+    margin-left: 10px;
+}
+
+.version:hover {
+    color: #262626;
+    cursor: pointer;
+}
+
+.version.active {
+    color: white;
+    background: #ea5449;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.scriptureContent {
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+}
+
+.scriptureContent:after {
+    content: "";
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 140px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+}
+
+.scriptureContent.more {
+    overflow: inherit;
+    height: auto;
+}
+
+.scriptureContent.more:after {
+    content: initial;
+}
+
+.showMore,
+.showLess {
+    color: #ea5449;
+    text-align: center;
+}
+
+.showMore:hover,
+.showLess:hover {
+    color: #262626;
+    cursor: pointer;
+}
+
+.showMore.ng-hide,
+.showLess.ng-hide {
+    display: none !important;
+}
+
+@media (max-width: 1200px) {
+    div {
+        font-size: 30px;
+    }
+
+    #heading {
+        width: 100%;
+    }
+
+    #headingWrapper {
+        height: 150px;
+    }
+
+    #theInnLogo {
+        height: 84px;
+        margin-top: 40px;
+        margin-left: 12px;
+    }
+
+    #heading h1 {
+        line-height: 150px;
+        font-size: 48px;
+    }
+
+    #heading h2 {
+        line-height: 150px;
+        font-size: 32px;
+    }
+
+    #heading #backButton,
+    #heading #nextButton {
+        margin-top: 50px;
+        height: 60px;
+    }
+
+    div[ng-view] {
+        padding-top: 150px;
+        width: 100%;
+    }
+
+    div[section] {
+        box-shadow: 0 0 8px rgba(100, 100, 100, 0.25);
+        margin: 40px 0;
+        padding: 20px;
+        border-bottom: 10px solid #262626;
+    }
+
+    div[section]:hover {
+        box-shadow: 0 0 12px rgba(100, 100, 100, 0.5);
+        border-bottom: 10px solid #ea5449;
+    }
+
+    h1 {
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 1201px) {
+    #heading {
+        width: 1200px;
+    }
+
+    #headingWrapper {
+        height: 100px;
+    }
+
+    #theInnLogo {
+        height: 84px;
+        margin-top: 8px;
+    }
+
+    #heading h1 {
+        line-height: 100px;
+    }
+
+    #heading h2 {
+        line-height: 100px;
+    }
+
+    #heading #backButton,
+    #heading #nextButton {
+        margin-top: 35px;
+    }
+
+    #heading,
+    #viewWrapper {
+        position: absolute;
+        margin-left: -600px;
+        left: 50%;
+        height: 100%;
+    }
+
+    div[ng-view] {
+        padding-top: 100px;
+        width: 1200px;
+    }
+}

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+        <script src="main.js"></script>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="main.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body ng-app="InnBibleChallenge">
+        <div id="headingWrapper" ng-controller="HeadingController">
+            <div id="heading">
+                <img id="nextButton" src="images/nextButton.png" ng-show="date && !date.isSame(endDate)" ng-click="next()"/>
+                <h2 ng-show="date">{{date && date.format("MMM. Do, YYYY")}}</h2>
+                <img id="backButton" src="images/backButton.png" ng-show="date && !date.isSame(startDate)" ng-click="back()"/>
+                <!--<h5 id="introduction" ng-click="goToIntroduction()" ng-hide="introduction">Introduction</h5>-->
+                <!--<h5 id="backToDevotional" ng-click="backToDevotional()" ng-show="introduction">Back</h5>-->
+
+                <img id="theInnLogo" src="images/theInnLogo.png">
+                <h1>Bible Challenge</h1>
+            </div>
+        </div>
+        <div id="viewWrapper">
+            <div ng-view class="animation"></div>
+        </div>
+    </body>
+</html>

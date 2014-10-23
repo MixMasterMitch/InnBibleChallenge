@@ -1,0 +1,11 @@
+<div class="versions">
+    Bible Version:
+    <span class="version" ng-click="niv()" ng-class="{active : active === 'niv'}">NIV</span>
+    <span class="version" ng-click="theMessage()" ng-class="{active : active === 'theMessage'}">The Message</span>
+</div>
+<h1>{{title}}</h1>
+<div class="scriptureContent" ng-include="scriptureUrl" ng-class="{more : more}"></div>
+<div class="showMore" ng-click="more = true" ng-show="!more">Show All</div>
+<div class="showLess" ng-click="more = false" ng-show="more">Show Less</div>
+
+<!-- <sup .{1,100}class="footnote".{1,250}</sup> -->
