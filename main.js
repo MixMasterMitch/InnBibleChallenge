@@ -1,3 +1,10 @@
+var startDate = function() {
+    return moment('2014-10-15');
+}
+var endDate = function() {
+    return moment('2014-10-27');
+}
+
 angular.module('InnBibleChallenge', ['ngRoute', 'ngAnimate'])
     .config(function($routeProvider) {
         $routeProvider
@@ -7,7 +14,10 @@ angular.module('InnBibleChallenge', ['ngRoute', 'ngAnimate'])
                 }
             })
             .when('/404', {
-                templateUrl : '404.html'
+                redirectTo : function() {
+                    return '/devotional/' + endDate().format('YYYY-MM-DD');
+                }
+                // templateUrl : '404.html'
             })
             .when('/introduction', {
                 templateUrl : 'introduction.html'
@@ -19,8 +29,8 @@ angular.module('InnBibleChallenge', ['ngRoute', 'ngAnimate'])
             });
     })
     .controller('HeadingController', function($scope, $routeParams, $location) {
-        $scope.startDate = moment('2014-10-15');
-        $scope.endDate = moment('2014-10-23');
+        $scope.startDate = startDate();
+        $scope.endDate = endDate();
         $scope.$watch(function() { return $routeParams.date }, function() {
             $scope.date = $routeParams.date && moment($routeParams.date);
         });

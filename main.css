@@ -6,6 +6,16 @@ body {
     overflow-y: scroll;
 }
 
+a {
+    color: #ea5449;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ba3429;
+}
+
 #headingWrapper {
     height: 100px;
     position: fixed;
@@ -146,6 +156,7 @@ div[section]:hover {
 .scriptureContent.more {
     overflow: inherit;
     height: auto;
+    min-height: 200px;
 }
 
 .scriptureContent.more:after {
