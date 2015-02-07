@@ -41,5 +41,5 @@ for (var i = 2; i < process.argv.length; i++) {
 var crawler = new Crawler({});
 crawler.queue(queries);
 var writeFile = function(text, version, query) {
-    fs.writeFileSync('./scripture/' + version + '/' + query + '.html', text);
+    fs.writeFileSync('../scripture/' + version + '/' + query + '.html', text);
 };

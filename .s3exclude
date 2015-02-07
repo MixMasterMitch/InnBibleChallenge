@@ -1,0 +1,7 @@
+*server/*
+*.iml
+*.git/*
+*.s3exclude
+*.idea/*
+*.DS_Store
+*.gitignore

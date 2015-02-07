@@ -2,7 +2,7 @@ var startDate = function() {
     return moment('2014-10-15');
 }
 var endDate = function() {
-    return moment('2014-10-27');
+    return moment('2014-11-23');
 }
 
 angular.module('InnBibleChallenge', ['ngRoute', 'ngAnimate'])
